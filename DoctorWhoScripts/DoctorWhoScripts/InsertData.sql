@@ -1,3 +1,4 @@
+use tempDB;
 use DoctorWho;
 --Insert into Authors
 Insert into tblAuthor(AuthorName) values ('Author1');
@@ -19,16 +20,16 @@ Insert into tblCompanion(CompanionName,WhoPlayed) values ('Peter','Chris');
 Insert into tblCompanion(CompanionName,WhoPlayed) values ('John','Moe');
 --Insert into Doctor
 Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor1','2001-01-01','2002-01-01','2003-01-01');
-Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor2','2001-01-02','2002-01-02','2003-01-02');
-Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor3','2001-01-03','2002-01-02','2003-01-03');
-Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor4','2001-01-04','2002-01-02','2003-01-04');
-Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor5','2001-01-05','2002-01-02','2003-01-05');
+Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor2','2001-01-02','2003-01-02','2004-01-02');
+Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor3','2001-01-03','2004-01-03','2005-01-03');
+Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor4','2001-01-04','2005-01-04','2006-01-04');
+Insert into tblDoctor(DoctorNumber,DoctorName,BirthDate,FirstEpisodeDate,LastEpisodeDate) values (1,'Doctor5','2001-01-05','2006-01-05','2007-01-05');
 --Insert into Episode
-Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID) values (1,1,'Bad','Hello World','2001-01-01',1);
-Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID) values (2,2,'Good','Hello World2','2001-01-02',2);
-Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID) values (3,3,'ok','Hello World3','2001-01-03',3);
-Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID) values (1,1,'great','Hello World4','2001-01-04',4);
-Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID) values (1,1,'excellent','Hello World5','2001-01-05',5);
+Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID,DoctorId) values (1,1,'Bad','Hello World','2001-01-01',1,1);
+Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID,DoctorId) values (2,2,'Good','Hello World2','2001-01-02',2,2);
+Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID,DoctorId) values (3,3,'ok','Hello World3','2001-01-03',3,3);
+Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID,DoctorId) values (4,4,'great','Hello World4','2001-01-04',4,4);
+Insert into tblEpisode(SeriesNumber,EpisodeNumber,EpisodeType,Title,EpisodeDate,AuthorID,DoctorId) values (5,5,'excellent','Hello World5','2001-01-05',5,null);
 --Insert into EpisodeCompanion
 Insert into tblEpisodeCompanion(EpisodeId,CompanionId) values (1,1);
 Insert into tblEpisodeCompanion(EpisodeId,CompanionId) values (2,2);
