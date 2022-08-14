@@ -1,4 +1,11 @@
+
 CREATE FUNCTION fnEnemies (@EpisodeId int)
-RETURNS Table
+RETURNS varchar(100)
 AS
-return (Select EnemyName from tblEnemy where EnemyId in (Select EnemyId from tblEpisodeEnemy where EpisodeId=@EpisodeId));
+BEGIN 
+Declare @res varchar(100);
+Select @res=STRING_AGG(EnemyName, ', ') from tblEnemy E,tblEpisodeEnemy EE where E.EnemyId=EE.EpisodeEnemyId AND EE.EpisodeId=@EpisodeId;
+If(@res is null)
+set @res='';
+Return @res;
+END;

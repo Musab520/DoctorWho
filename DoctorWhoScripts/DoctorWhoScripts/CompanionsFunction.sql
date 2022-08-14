@@ -1,4 +1,11 @@
+
 CREATE FUNCTION fnCompanions (@EpisodeId int)
-RETURNS Table
+RETURNS varchar(100)
 AS
-return (Select CompanionName from tblCompanion where CompanionId in (Select CompanionId from tblEpisodeCompanion where EpisodeId=@EpisodeId));
+BEGIN 
+Declare @res varchar(100);
+Select @res=STRING_AGG(CompanionName, ', ') from tblCompanion C,tblEpisodeCompanion EC where C.CompanionId=EC.CompanionId AND EC.EpisodeId=@EpisodeId;
+If(@res is null)
+set @res='';
+Return @res;
+END;
