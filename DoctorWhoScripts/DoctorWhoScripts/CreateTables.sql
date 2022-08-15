@@ -1,0 +1,11 @@
+use tempDB;
+drop Database DoctorWho;
+Create Database DoctorWho;
+use  DoctorWho;
+Create Table tblEnemy(EnemyId int IDENTITY(1,1),EnemyName varchar(32),EnemyDescription text,primary key (EnemyId));
+Create Table tblAuthor(AuthorId int IDENTITY(1,1),AuthorName varchar(32),primary key (AuthorId));
+Create Table tblDoctor(DoctorId int IDENTITY(1,1),DoctorNumber int,DoctorName varchar(32),BirthDate Date,FirstEpisodeDate Date,LastEpisodeDate Date,primary key (DoctorId));
+Create Table tblCompanion(CompanionId int IDENTITY(1,1),CompanionName varchar(32),WhoPlayed varchar(32),primary key (CompanionId));
+Create Table tblEpisode(EpisodeId int IDENTITY(1,1),SeriesNumber int,EpisodeNumber int,EpisodeType varchar(32),Title varchar(32),EpisodeDate Date,AuthorId int,DoctorId int,Notes text,primary key (EpisodeId),Foreign Key (AuthorId) references tblAuthor(AuthorId),Foreign Key (DoctorId) references tblDoctor(DoctorId));
+Create Table tblEpisodeEnemy(EpisodeEnemyId int IDENTITY(1,1),EpisodeId int,EnemyId int,primary key (EpisodeEnemyId), foreign key (EnemyId) references tblEnemy(EnemyId),foreign key (EpisodeId) references tblEpisode(EpisodeId));
+Create Table tblEpisodeCompanion(EpisodeCompanionId int IDENTITY(1,1),EpisodeId int,CompanionId int,primary key (EpisodeCompanionId), foreign key (CompanionId) references tblCompanion(CompanionId),foreign key (EpisodeId) references tblEpisode(EpisodeId));
