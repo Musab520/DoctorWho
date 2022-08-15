@@ -1,2 +1,3 @@
+use tempdb;
 use DoctorWho;
-SELECT * from tblAuthor;
+SELECT * from tblEpisode;
