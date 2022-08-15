@@ -36,9 +36,13 @@ Insert into tblEpisodeCompanion(EpisodeId,CompanionId) values (2,2);
 Insert into tblEpisodeCompanion(EpisodeId,CompanionId) values (3,3);
 Insert into tblEpisodeCompanion(EpisodeId,CompanionId) values (4,4);
 Insert into tblEpisodeCompanion(EpisodeId,CompanionId) values (5,5);
+Insert into tblEpisodeCompanion(EpisodeId,CompanionId) values (2,5);
+Insert into tblEpisodeCompanion(EpisodeId,CompanionId) values (1,3);
 --Insert into EpisodeEnemy
 Insert into tblEpisodeEnemy(EpisodeId,EnemyId) values (1,1);
 Insert into tblEpisodeEnemy(EpisodeId,EnemyId) values (2,2);
 Insert into tblEpisodeEnemy(EpisodeId,EnemyId) values (3,3);
 Insert into tblEpisodeEnemy(EpisodeId,EnemyId) values (4,4);
 Insert into tblEpisodeEnemy(EpisodeId,EnemyId) values (5,5);
+Insert into tblEpisodeEnemy(EpisodeId,EnemyId) values (2,5);
+Insert into tblEpisodeEnemy(EpisodeId,EnemyId) values (1,3);
